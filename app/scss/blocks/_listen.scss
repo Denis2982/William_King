@@ -1,0 +1,75 @@
+.listen {
+    margin-bottom: 204px;
+    position: relative;
+    &::after{
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background-color: $line;
+        bottom: -114px;
+        @include desctop-small{           
+            bottom: -75px;             
+        }
+        @include tablet{            
+            bottom: -50px;             
+        }
+        @include tablet-small{            
+            bottom: -35px;             
+        }
+        @include mobile{           
+            bottom: -25px;            
+        }   
+    }
+    @include desctop-small{        
+        margin-bottom: 150px;        
+    }
+    @include tablet{       
+        margin-bottom: 100px;              
+    }
+    @include tablet-small{        
+        margin-bottom: 70px;               
+    }
+    @include mobile{        
+        margin-bottom: 50px;              
+    }
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 26px;
+        @include tablet-small{       
+            grid-template-columns: 1fr; 
+            gap: 20px;             
+        }
+    }
+    &__card {
+        background: $dark-gray;
+        border-radius: 8px;
+        @include text($ff, 400, 18px, 1.6, $white);
+        padding: 32px;
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-rows: 1fr minmax(71px, auto);
+        gap: 28px;
+        @include tablet-small{       
+            gap: 20px; 
+            padding: 20px;
+            font-size: 16px;            
+        }
+    }
+    &__card-customer {
+        display: flex;
+        gap: 20px;
+    }
+    &__card-desc {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__card-name {
+        font-weight: 500;
+    }
+    &__card-prof {
+       color: $primary;
+    }
+}

@@ -1,0 +1,103 @@
+.header {
+    @include block(flex, space-between, center);
+    padding: 37px 0 88px;
+    @include tablet{        
+        padding: 25px 0 60px;       
+    }
+    @include mobile{        
+        padding: 20px 0 30px;       
+    }
+    &__logo {
+        @include text($ff, 700, 28px, 1.18, $white);
+        @include mobile{            
+            font-size: 20px;            
+        }
+    }
+}
+.nav {
+    &__list {
+        @include block(flex, space-between, center);
+        gap: 24px;
+        transition: $transition;        
+        @include tablet{           
+            position: fixed;
+            padding: 0 30px;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+            z-index: 5;
+            background-color: $dark-gray;
+            left: 0;
+            top: 0;
+            gap: 30px;
+            box-shadow: 3px 3px 8px 1px $primary;
+            transform: translateX(-150%);
+            &--open{
+                transform: translate(0);                
+            }
+        }
+    }    
+    &__list-link {
+        @include text($ff, 400, 16px, 1.19, $white);
+        transition: $transition;
+        &--active {
+            color: $primary;
+        }
+        &:hover{
+            color: $primary;        
+        }        
+    }
+    &__burger{
+        @include block(none, flex-end, center);        
+        position: relative;
+        z-index: 5;        
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        @include tablet{            
+            display: flex;
+            position: relative;            
+        }
+        span{
+            height: 3px;
+            width: 100%;
+            border-radius: 4px;
+            transform: scale(1);
+            background-color: $white;
+            transition: $transition;
+            border: 0;
+        }
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            border: 0;
+            border-radius: 4px;
+            background-color: $white;
+            transition: $transition;
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+        &--open span {
+            transform: scale(0);
+        }
+        &--open::before {
+            top: 50%;
+            transform: rotate(-45deg) translate(0, -50%);
+        }
+        &--open::after {
+            bottom: 50%;
+            transform: rotate(45deg) translate(0, 50%);
+        }
+    }
+    & ul{
+        @include tablet {
+            padding: 80px;
+        }
+    }
+}

@@ -1,0 +1,113 @@
+.person {
+    display: flex;
+    gap: 94px;
+    position: relative;
+    margin-bottom: 244px;
+    &::after{
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background-color: $line;
+        bottom: -153px; 
+        @include desctop-small{           
+            bottom: -100px;             
+        }
+        @include tablet{            
+            bottom: -75px;             
+        }
+        @include tablet-small{            
+            bottom: -50px;             
+        }
+        @include mobile{           
+            bottom: -25px;            
+        }   
+    }
+    @include desctop-small{        
+        margin-bottom: 200px;        
+    }
+    @include tablet{       
+        margin-bottom: 150px;
+        gap: 40px;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        text-align: center;        
+    }
+    @include tablet-small{        
+        margin-bottom: 100px;
+        gap: 30px;        
+    }
+    @include mobile{        
+        margin-bottom: 50px;
+        gap: 20px;       
+    }
+    &__desc {
+        padding-top: 86px;  
+        @include tablet-small{           
+            padding-top: 50px;           
+        }
+        @include mobile{            
+            padding-top: 25px;           
+        }
+    }
+    &__desc-title {
+        @include text($ff, 700, 92px, 1.18, $white);
+        padding-bottom: 24px;
+        @include desctop-small{           
+            font-size: 60px;            
+        }
+        @include mobile{            
+            font-size: 40px;
+            padding-bottom: 20px;           
+        }
+    }
+    &__desc-subtitle{
+        @include text($ff, 500, 18px, 1.17, $white);
+        text-transform: uppercase;
+        padding-bottom: 24px;
+        & span + span{
+            margin-left: 15px;
+            @include desctop-small{                
+                margin-left: 10px;                
+            }
+        } 
+    }    
+    &__desc-text {
+        @include text($ff, 400, 16px, 1.62, $body);
+        padding-bottom: 24px;
+        @include tablet{           
+            max-width: 500px;            
+        }
+    }
+    &__photo {
+        position: relative;      
+    }
+    &__photo-ava { 
+        max-width: 460px;  
+        object-fit: cover;
+        z-index: 1;
+        position: relative;
+        top: 4%;
+        scale: 1.12;
+        @include mobile{           
+            scale: 1;
+            width: 100%;            
+        }
+    }
+    &__photo-ellipse1,
+    &__photo-ellipse2 {
+        position: absolute;
+        @include mobile{           
+            display: none;           
+        }
+    }
+    &__photo-ellipse1 {        
+        right: -11%;
+        top: -11%;        
+    }
+    &__photo-ellipse2 {
+        left: 4%;
+        bottom: -17%;        
+    }
+}
+

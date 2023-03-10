@@ -1,0 +1,44 @@
+@mixin text($ff, $fw, $fs, $lh, $color){
+    font-family: $ff;
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: $lh;    
+    color: $color;
+}
+
+@mixin block($dis, $jc, $ai){
+    display: $dis;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+
+
+@mixin desctop-small{
+    @media (max-width: $desctop-small) {
+        @content;
+    }
+}
+@mixin tablet{
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+@mixin tablet-small{
+    @media (max-width: $tablet-small) {
+        @content;
+    }
+}
+@mixin mobile{
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+@function max($numbers...){
+    @return m#{a}x(#{$numbers});    
+}
+
+@function min($numbers...){
+    @return m#{i}n(#{$numbers});    
+}

@@ -1,0 +1,60 @@
+.portfolio {
+    margin-bottom: 147px;
+    position: relative;
+    &::after{
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background-color: $line;
+        bottom: -80px;
+        @include desctop-small{           
+            bottom: -50px;            
+        }
+        @include tablet{           
+            bottom: -40px;            
+        }
+        @include tablet-small{           
+            bottom: -30px;           
+        }
+        @include mobile{           
+            bottom: -25px;            
+        }
+    }
+    @include desctop-small{       
+        margin-bottom: 100px;        
+    }
+    @include tablet{       
+        margin-bottom: 80px;        
+    }
+    @include tablet-small{       
+        margin-bottom: 65px;      
+    }
+    @include mobile{
+        @media (max-width: $mobile) {
+            margin-bottom: 50px;
+        }
+    }
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 26px;
+        row-gap: 25px;
+        @include tablet{            
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;            
+        }
+        @include mobile{            
+            grid-template-columns: 1fr;                      
+        }
+    }
+    &__card {
+        border-radius: 8px;  
+    }
+    &__card-img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+

@@ -1,0 +1,40 @@
+.form {
+    margin-bottom: 90px;
+    @include desctop-small{        
+        margin-bottom: 80px;        
+    }
+    @include tablet{       
+        margin-bottom: 70px;           
+    }
+    @include tablet-small{        
+        margin-bottom: 50px;          
+    }
+    @include mobile{        
+        margin-bottom: 30px;           
+    }
+    &__box {
+        @include block(flex, center, flex-start);
+        flex-direction: column;
+        gap: 24px;         
+    }
+    &__input-name,
+    &__input-email,
+    &__input-text {
+        width: 100%;
+        @include text($ff, 400, 18px, 1.6, $white);
+        padding: 14px 16px;
+        border: 1px solid $line;
+        border-radius: 4px;
+        background-color: inherit;
+    }
+    &__input-text{
+        min-height: 120px;
+        resize: none;
+    }
+    &__input-name::placeholder,
+    &__input-email::placeholder,
+    &__input-text::placeholder {            
+        @include text($ff, 400, 14px, 1.21, $gray-2);
+    }    
+}
+

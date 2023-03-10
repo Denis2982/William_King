@@ -1,0 +1,64 @@
+.services {
+    margin-bottom: 190px;
+    position: relative;
+    &::after{
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background-color: $line;
+        bottom: -90px;
+        @include desctop-small{            
+            bottom: -70px;           
+        }
+        @include tablet-small{           
+            bottom: -50px;            
+        }
+        @include mobile{           
+            bottom: -25px;           
+        }
+    }
+    @include desctop-small{        
+        margin-bottom: 150px;      
+    }
+    @include tablet-small{
+        margin-bottom: 100px;        
+    }
+    @include mobile{       
+        margin-bottom: 50px;        
+    }
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 26px;
+        @include tablet{           
+            grid-template-columns: 1fr;            
+        }
+    }
+    &__card {
+        padding: 32px;
+        @include block(flex, flex-start, flex-start);
+        gap: 20px;
+        background: $dark-gray;
+        border-radius: 12px;
+        cursor: pointer;
+        &:hover &-text{
+            color: $white;
+        }
+        @include tablet-small{           
+            padding: 20px;           
+        }
+    }
+    &__card-title {
+        @include text($ff, 500, 22px, 1.18, $white);
+        margin-bottom: 12px;
+    }
+    &__card-text {
+        @include text($ff, 400, 16px, 1.6, $body);
+    }
+    &__card-icon {
+        @include desctop-small{            
+            align-self: center;            
+        }
+    }
+}
